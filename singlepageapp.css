@@ -1,0 +1,602 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5f5;
+}
+
+section {
+    padding: 70px 0;
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: white !important;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: orange !important;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1600&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 65px;
+    font-weight: bold;
+    animation: fadeIn 2s ease;
+}
+
+.hero-content p {
+    font-size: 22px;
+    margin: 20px 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+button,
+.btn-warning {
+    background: orange !important;
+    border: none !important;
+    color: black !important;
+    padding: 12px 30px !important;
+    border-radius: 30px !important;
+    font-weight: bold !important;
+    transition: 0.4s;
+}
+
+button:hover,
+.btn-warning:hover {
+    background: black !important;
+    color: white !important;
+    transform: scale(1.05);
+}
+
+h2 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: orange;
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+.about {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1600&auto=format&fit=crop');
+
+    background-size: cover;
+    background-position: center;
+}
+
+.about img {
+    border-radius: 20px;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.about img:hover {
+    transform: scale(1.03);
+}
+
+.text {
+    color: white;
+    font-size: 17px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.card {
+    border: none !important;
+    border-radius: 20px !important;
+    transition: 0.4s;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card i {
+    font-size: 50px;
+    color: orange;
+    margin-bottom: 20px;
+    transition: 0.4s;
+}
+
+.card:hover i {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.card h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.details {
+    margin-bottom: 20px;
+}
+
+summary {
+    background: #333;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+summary:hover {
+    background: orange;
+    color: black;
+}
+
+.gallery-container input {
+    display: none;
+}
+
+.gallery-container label {
+    display: block;
+    background: #222;
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.image-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s ease;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Accordion Open */
+.gallery-container input:checked+label+.image-container {
+    max-height: 1200px;
+    padding: 20px 0;
+}
+
+.parallax {
+    height: 400px;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://images.unsplash.com/photo-1459908676235-d5f02a50184b?q=80&w=1600&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parallax h1 {
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.quote-section {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1600&auto=format&fit=crop');
+
+    background-size: cover;
+    background-position: center;
+
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.quote-section h2 {
+    color: white;
+}
+
+.frm {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 90%;
+}
+
+.frm label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.frm input,
+.frm textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.frm input:focus,
+.frm textarea:focus {
+    border-color: orange;
+}
+
+.map {
+    padding: 20px;
+}
+
+iframe {
+    border-radius: 20px;
+}
+
+.footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media(max-width:768px) {
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .parallax h1 {
+        font-size: 35px;
+        text-align: center;
+    }
+
+    .about {
+        text-align: center;
+    }
+
+    .text {
+        text-align: center;
+    }
+
+    iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .image-container {
+        grid-template-columns: 1fr;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: 250px;
+    }
+}
+
+.contact-box {
+    background: #fff;
+    margin: auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.map,
+.frm-section {
+    padding: 15px;
+}
+
+.map iframe {
+    width: 100%;
+    height: 600px;
+    border-radius: 15px;
+}
+
+.frm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.frm label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.frm input,
+.frm textarea {
+    width: 100%;
+    padding: 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+    outline: none;
+}
+
+.frm button {
+    margin-top: 20px;
+    padding: 12px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: black;
+    color: white;
+
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+
+    .contact-box {
+        padding: 20px;
+    }
+
+    .map iframe {
+        height: 300px;
+    }
+}
+.craft-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    height: 500px;
+    margin: 80px auto;
+
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+#craft-toggle {
+    display: none;
+}
+.craft-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60%;
+    height: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.7s ease;
+}
+.craft-content h2 {
+    color: #ff9800;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+.craft-content p {
+    color: #555;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+.stats-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.craft-card {
+    flex: 1;
+    min-width: 170px;
+
+    padding: 30px 20px;
+    text-align: center;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(135deg, #ff9800, #ff5722);
+
+    color: white;
+
+    transition: 0.5s;
+}
+
+.craft-card:hover {
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.craft-card h3 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.craft-card p {
+    color: white;
+    margin: 0;
+}
+
+
+.craft-overlay {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 40%;
+    height: 100%;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)),
+
+        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop');
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.7s ease;
+}
+
+.overlay-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.overlay-content h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.overlay-content p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.move-btn {
+    display: inline-block;
+
+    padding: 12px 30px;
+
+    border: 2px solid white;
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+}
+
+.move-btn:hover {
+    background: white;
+    color: orange;
+}
+
+#craft-toggle:checked~.craft-overlay {
+    transform: translateX(-150%);
+}
+
+#craft-toggle:checked~.craft-content {
+    filter: blur(5px);
+    transition: 0.5s ease;
+}
+
+@media(max-width:768px) {
+
+    .craft-wrapper {
+        height: auto;
+    }
+
+    .craft-content,
+    .craft-overlay {
+        position: relative;
+        width: 100%;
+
+        transform: none !important;
+    }
+
+    .craft-content {
+        padding: 30px 20px;
+    }
+
+    .craft-overlay {
+        height: 300px;
+    }
+
+    .stats-container {
+        flex-direction: column;
+    }
+
+    .craft-content h2 {
+        font-size: 35px;
+        text-align: center;
+    }
+
+    .overlay-content h1 {
+        font-size: 32px;
+    }
+}
